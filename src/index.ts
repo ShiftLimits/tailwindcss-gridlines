@@ -71,7 +71,7 @@ module.exports = plugin(function(api:any) {
       full: '9999px',
     },
     borderWidth: {
-      default: '1px',
+      DEFAULT: '1px',
       '0': '0',
       ...UNIT_FRACTIONS
 		},
