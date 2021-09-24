@@ -5,8 +5,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+Nothing yet.
+
+## [0.2.1] - 2021-09-24
 ### Added
 - Add `CHANGELOG.md` following the Keep a Changelog format.
+
+### Changed
+- Capitalized `default` key to make sure default `borderWidth` utility is set appropriately (removes `border-default`)
 
 ## [0.2.0] - 2021-07-23
 ### Added
