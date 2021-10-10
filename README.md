@@ -263,14 +263,15 @@ Percentage utilities have been renamed in two flavors depending on your preferen
 
 In addition to the spacing values above, the `width`, `max-width`, and `min-width` utilities also include each screen breakpoint and the following:
 
-| Name       | Size       |
-| ---------- | ---------- |
-| 1/4-screen | 25vw       |
-| 1/3-screen | 33vw       |
-| 1/2-screen | 50vw       |
-| 2/3-screen | 66vw       |
-| 3/4-screen | 75vw       |
-| screen     | 100vw      |
+| Name        | Size        |
+| ----------- | ----------- |
+| 1/4-screen  | 25vw        |
+| 1/3-screen  | 33vw        |
+| 1/2-screen  | 50vw        |
+| 2/3-screen  | 66vw        |
+| 3/4-screen  | 75vw        |
+| screen      | 100vw       |
+| fit         | fit-content |
 
 #### Width
 
@@ -303,14 +304,15 @@ These utilities are specific to `max-width`.
 
 In addition to the spacing values above, the `height`, `max-height`, and `min-height` utilities also include each screen breakpoint and the following:
 
-| Name       | Size       |
-| ---------- | ---------- |
-| 1/4-screen | 25vh       |
-| 1/3-screen | 33vh       |
-| 1/2-screen | 50vh       |
-| 2/3-screen | 66vh       |
-| 3/4-screen | 75vh       |
-| screen     | 100vh      |
+| Name       | Size        |
+| ---------- | ----------- |
+| 1/4-screen | 25vh        |
+| 1/3-screen | 33vh        |
+| 1/2-screen | 50vh        |
+| 2/3-screen | 66vh        |
+| 3/4-screen | 75vh        |
+| screen     | 100vh       |
+| fit        | fit-content |
 
 #### Height
 
