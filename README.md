@@ -113,7 +113,7 @@ Gridlines is a complete overhaul of the spacing system in Tailwind CSS. All plug
 
 #### Relative To Base Grid Cell Size
 
-We generate a proportional spacing scale as fractions of the base grid cell size. It is recommended to use Tailwind with JIT mode enabled to remove unused utilities.
+We generate a proportional spacing scale as fractions of the base grid cell size. If you are using Tailwind v2 it is recommended that you enable JIT mode to remove unused utilities.
 
 | Name   | Size  | Pixels   |
 | ------ | ----- | -------- |
