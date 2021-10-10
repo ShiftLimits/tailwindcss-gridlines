@@ -272,6 +272,8 @@ In addition to the spacing values above, the `width`, `max-width`, and `min-widt
 | 3/4-screen  | 75vw        |
 | screen      | 100vw       |
 | fit         | fit-content |
+| min         | min-content |
+| max         | max-content |
 
 #### Width
 
@@ -288,9 +290,6 @@ These utilities are specific to `min-width`.
 | Name | Size        |
 | ---- | ----------- |
 | 0    | 0px         |
-| min  | min-content |
-| max  | max-content |
-
 
 #### Max-Width
 
@@ -313,6 +312,8 @@ In addition to the spacing values above, the `height`, `max-height`, and `min-he
 | 3/4-screen | 75vh        |
 | screen     | 100vh       |
 | fit        | fit-content |
+| min        | min-content |
+| max        | max-content |
 
 #### Height
 

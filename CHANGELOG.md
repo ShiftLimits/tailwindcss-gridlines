@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 - Add `fit-content` utility for `width`, `min-width`, and `max-width`; and for `height`, `min-height`, and `max-height`
+- Add `min-content` utility for `width`, `max-width`, `height`, `min-height`, and `max-height`
+- Add `max-content` utility for `width`, `max-width`, `height`, `min-height`, and `max-height`
 
 
 ## [0.2.1] - 2021-09-24
