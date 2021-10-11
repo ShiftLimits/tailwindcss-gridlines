@@ -16,7 +16,7 @@
         "*.js"
     ],
     "dependencies": {
-        "numeric-quantity": "^1.0.1",
+        "numeric-quantity": "^1.0.2",
         "tailwindcss": "^2.2.4"
     },
     "devDependencies": {
