@@ -115,7 +115,7 @@ The grid uses `mix-blend-mode: difference;` to make sure the rules are visible a
 module.exports = {
   theme: {
     gridlines: {
-      ruleColor: 'rgba(255,0,0, 0.5)' // Half-opaque red unit rules
+      ruleColor: 'rgba(255,0,0, 0.5)', // Half-opaque red unit rules
       ruleSecondaryColor: 'rgba(255,0,0, 0.1)' // Almost-transparent red subdivision rules
     }
   },
