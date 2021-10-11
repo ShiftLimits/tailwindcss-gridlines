@@ -78,7 +78,9 @@ module.exports = {
 
 ### Gridlines
 
-These utilities overlay a grid on top of an element to help aid the design process. They are  Put it on the `body` element to apply to the whole page.
+These utilities overlay a grid to help visually aid the design process. They can be placed on the `body` element to overlay across the whole page, or on individual elements for lining up the element's content specifically.
+
+The grid will be sized according to your base grid cell size. Each subdivision utility is based on a common denominator of the [spacing fractions](#spacing) that are less than 1.
 
 | Class              | Preview                                                           |
 | ------------------ | ----------------------------------------------------------------- |
@@ -91,6 +93,8 @@ These utilities overlay a grid on top of an element to help aid the design proce
 
 #### Positioning
 
+By default the grid's origin is positioned at the top left of the element it is applied on. These utilities help you position the gridlines if you are working with elements that have a different origin, such as a panel that is anchored to the right edge of the screen.
+
 | Class                  | Value Applied To Gridlines           |
 | ---------------------- | ------------------------------------ |
 | gridlines-top-left     | `background-position: top left;`     |
@@ -100,6 +104,24 @@ These utilities overlay a grid on top of an element to help aid the design proce
 | gridlines-top-right    | `background-position: top right;`    |
 | gridlines-right        | `background-position: right;`        |
 | gridlines-bottom-right | `background-position: bottom right;` |
+
+#### Customizing
+
+The grid uses `mix-blend-mode: difference;` to make sure the rules are visible at different contrasts. You can customize the rule colors by editing the `theme.gridlines` value of your Tailwind config like so:
+
+```js
+// tailwind.config.js
+
+module.exports = {
+  theme: {
+    gridlines: {
+      ruleColor: 'rgba(255,0,0, 0.5)' // Half-opaque red unit rules
+      ruleSecondaryColor: 'rgba(255,0,0, 0.1)' // Almost-transparent red subdivision rules
+    }
+  },
+  // ...
+}
+```
 
 #### Note
 
