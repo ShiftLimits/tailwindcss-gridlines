@@ -1,16 +1,48 @@
 import plugin from 'tailwindcss/plugin'
 import preflight from './plugins/preflight'
 import gridlines from './plugins/gridlines'
+import unit from './plugins/unit'
 import { DEFAULT_BASE, FRACTIONS_1_TO_2, FRACTIONS_1_TO_5, PERCENTAGES, PERCENTAGES_FRACTIONS, UNIT_FRACTIONS } from './constants'
-import { generateFractionUtil, generateUnitMultipleString } from './utils'
+import { generateFractionUtil, generateUnitMultipleString, generateUnitConfig } from './utils';
 
 
 module.exports = plugin(function(api:any) {
-  const plugins = [preflight, gridlines]
+  const plugins = [preflight, gridlines, unit]
   for (let plugin of plugins) plugin(api)
 }, {
   theme: {
     base: DEFAULT_BASE,
+    unit: generateUnitConfig([
+      '1/5',
+      '2/5',
+      '3/5',
+      '4/5',
+      '1/4',
+      '2/4',
+      '3/4',
+      '1/3',
+      '2/3',
+      '1/2',
+      '1',
+      '1 1/5',
+      '1 2/5',
+      '1 3/5',
+      '1 4/5',
+      '1 1/4',
+      '1 2/4',
+      '1 3/4',
+      '1 1/3',
+      '1 2/3',
+      '1 1/2',
+      '2',
+      '2 1/4',
+      '2 2/4',
+      '2 3/4',
+      '2 1/3',
+      '2 2/3',
+      '2 1/2',
+      '3'
+    ]),
     spacing: {
       px: '1px',
       '0': '0',

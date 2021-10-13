@@ -45,6 +45,45 @@ The core unit of gridlines is your base grid cell size. You can think of this as
 | ---- | ---- |
 | base | 24px |
 
+#### Controlling Per-Element
+
+The new `unit` utility can be used to adjust the relative sizing for an individual element and its children. This can be useful for creating different size variants of a component.
+
+| Name       | Size  | Pixels   |
+| ---------- | ----- | -------- |
+| unit-1/8   | 0.125 | 3px      |
+| unit-2/8   | 0.25  | 6px      |
+| unit-3/8   | 0.375 | 9px      |
+| unit-4/8   | 0.5   | 12px     |
+| unit-5/8   | 0.625 | 15px     |
+| unit-6/8   | 0.75  | 18px     |
+| unit-7/8   | 0.875 | 21px     |
+| unit-1/5   | 0.2   | 4.8px    |
+| unit-2/5   | 0.4   | 9.6px    |
+| unit-3/5   | 0.5   | 14.4px   |
+| unit-4/5   | 0.8   | 19.12px  |
+| unit-1/4   | 0.25  | 6px      |
+| unit-2/4   | 0.5   | 12px     |
+| unit-3/4   | 0.75  | 18px     |
+| unit-1/3   | 0.333 | 7.992px  |
+| unit-2/3   | 0.666 | 16.008px |
+| unit-1/2   | 0.5   | 12px     |
+| unit-1     | 1     | 24px     |
+| unit-1-1/5 | 1.2   | 28.8px   |
+| unit-1-2/5 | 1.4   | 33.6px   |
+| unit-1-3/5 | 1.5   | 38.4px   |
+| unit-1-4/5 | 1.8   | 43.12px  |
+| unit-1-1/4 | 1.25  | 30px     |
+| unit-1-2/4 | 1.5   | 36px     |
+| unit-1-3/4 | 1.75  | 42px     |
+| unit-1-1/2 | 1.5   | 36px     |
+| unit-2     | 2     | 48px     |
+| unit-2-1/4 | 2.25  | 54px     |
+| unit-2-2/4 | 2.5   | 60px     |
+| unit-2-3/4 | 2.75  | 66px     |
+| unit-2-1/2 | 2.5   | 60px     |
+| unit-3     | 3     | 72px     |
+
 #### Customizing
 
 You can customize the base unit by editing the `theme.base` value of your Tailwind config:

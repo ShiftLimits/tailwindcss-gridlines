@@ -21,7 +21,8 @@ export default function({ addBase, theme }:any) {
     addBase([
       {
         ':root': {
-          '--twgl-base': base.default || DEFAULT_BASE
+          '--twgl-base': base.default || DEFAULT_BASE,
+          '--twgl-current-base': 'var(--twgl-base)'
         },
       },
       ...media_queries
@@ -29,7 +30,8 @@ export default function({ addBase, theme }:any) {
   } else {
     addBase([{
       ':root': {
-        '--twgl-base': base
+        '--twgl-base': base,
+        '--twgl-current-base': 'var(--twgl-base)'
       }
     }])
   }
