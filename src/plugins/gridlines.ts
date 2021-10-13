@@ -95,6 +95,8 @@ const OCTS_SVG = (theme) => stripSVGWhitespace(`
 `)
 
 export default function({ addUtilities, theme }:any) {
+  if (!theme('gridlines')) return
+
   addUtilities(
     {
       '[class*="gridlines-"]::after': {

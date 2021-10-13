@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Add `unit` utility for adjusting the base grid cell size on a per-element basis
 
+### Fixed
+- Gridlines utilities will no longer generate if `theme.gridlines` is `false`
+
 ## [0.2.2] - 2021-10-10
 ### Added
 - Add `fit-content` utility for `width`, `min-width`, and `max-width`; and for `height`, `min-height`, and `max-height`
