@@ -42,6 +42,7 @@ describe('Preflight', () => {
     it('should add the default base grid cell size CSS variable to :root', () => {
         const output = `:root {
 					--twgl-base: 24px;
+					--twgl-current-base: var(--twgl-base);
 				}`
 
         return generateBaseCSS().then(result => {
@@ -51,6 +52,7 @@ describe('Preflight', () => {
     it('should add a custom base grid cell size CSS variable to :root', () => {
         const output = `:root {
 					--twgl-base: 28px;
+					--twgl-current-base: var(--twgl-base);
 				}`
 
         return generateBaseCSS({
@@ -64,6 +66,7 @@ describe('Preflight', () => {
     it('should add the default base grid cell size CSS variable to :root and create media queries for breakpoints', () => {
         const output = `:root {
 					--twgl-base: 24px
+					--twgl-current-base: var(--twgl-base);
 				}
 		
 				@media (min-width: 640px) {
@@ -92,6 +95,7 @@ describe('Preflight', () => {
     it('should add a custom base grid cell size CSS variable to :root and create media queries for breakpoints', () => {
         const output = `:root {
 					--twgl-base: 28px
+					--twgl-current-base: var(--twgl-base);
 				}
 		
 				@media (min-width: 640px) {
@@ -132,7 +136,7 @@ describe('Gridlines utilities', () => {
 							left: 0;
 							right: 0;
 							bottom: 0;
-							background-size: var(--twgl-base) var(--twgl-base);
+							background-size: var(--twgl-current-base) var(--twgl-current-base);
 							pointer-events: none;
 							mix-blend-mode: difference
 					}
@@ -190,7 +194,7 @@ describe('Gridlines utilities', () => {
 					}
 			`
 
-        return generateUtilityCSS().then(result => {
+        return generateUtilityCSS({ theme: { unit: false }}).then(result => {
             expect(result).toMatchCss(output)
         })
     })
@@ -207,7 +211,7 @@ describe('Gridlines utilities', () => {
 							left: 0;
 							right: 0;
 							bottom: 0;
-							background-size: var(--twgl-base) var(--twgl-base);
+							background-size: var(--twgl-current-base) var(--twgl-current-base);
 							pointer-events: none;
 							mix-blend-mode: difference
 					}
@@ -267,9 +271,10 @@ describe('Gridlines utilities', () => {
 
         return generateUtilityCSS({
             theme: {
-                gridlines: {
-                    ruleColor: custom_rule_color
-                }
+							unit: false,
+							gridlines: {
+									ruleColor: custom_rule_color
+							}
             }
         }).then(result => {
             expect(result).toMatchCss(output)
@@ -288,7 +293,7 @@ describe('Gridlines utilities', () => {
 						left: 0;
 						right: 0;
 						bottom: 0;
-						background-size: var(--twgl-base) var(--twgl-base);
+						background-size: var(--twgl-current-base) var(--twgl-current-base);
 						pointer-events: none;
 						mix-blend-mode: difference
 				}
@@ -348,6 +353,7 @@ describe('Gridlines utilities', () => {
 
         return generateUtilityCSS({
             theme: {
+								unit: false,
                 gridlines: {
                     ruleSecondaryColor: custom_rule_secondary_color
                 }
