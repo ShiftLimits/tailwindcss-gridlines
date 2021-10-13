@@ -124,6 +124,134 @@ describe('Preflight', () => {
     })
 })
 
+describe('Unit utilities', () => {
+	it('should generate utility classes', () => {
+		const output = `.unit-1 {
+      --twgl-current-base: calc(1 * var(--twgl-base))
+    }
+
+    .unit-2 {
+      --twgl-current-base: calc(2 * var(--twgl-base))
+    }
+
+    .unit-3 {
+      --twgl-current-base: calc(3 * var(--twgl-base))
+    }
+
+    .unit-1\\/5 {
+      --twgl-current-base: calc(0.2 * var(--twgl-base))
+    }
+
+    .unit-2\\/5 {
+      --twgl-current-base: calc(0.4 * var(--twgl-base))
+    }
+
+    .unit-3\\/5 {
+      --twgl-current-base: calc(0.6 * var(--twgl-base))
+    }
+
+    .unit-4\\/5 {
+      --twgl-current-base: calc(0.8 * var(--twgl-base))
+    }
+
+    .unit-1\\/4 {
+      --twgl-current-base: calc(0.25 * var(--twgl-base))
+    }
+
+    .unit-2\\/4 {
+      --twgl-current-base: calc(0.5 * var(--twgl-base))
+    }
+
+    .unit-3\\/4 {
+      --twgl-current-base: calc(0.75 * var(--twgl-base))
+    }
+
+    .unit-1\\/3 {
+      --twgl-current-base: calc(0.333 * var(--twgl-base))
+    }
+
+    .unit-2\\/3 {
+      --twgl-current-base: calc(0.667 * var(--twgl-base))
+    }
+
+    .unit-1\\/2 {
+      --twgl-current-base: calc(0.5 * var(--twgl-base))
+    }
+
+    .unit-1-1\\/5 {
+      --twgl-current-base: calc(1.2 * var(--twgl-base))
+    }
+
+    .unit-1-2\\/5 {
+      --twgl-current-base: calc(1.4 * var(--twgl-base))
+    }
+
+    .unit-1-3\\/5 {
+      --twgl-current-base: calc(1.6 * var(--twgl-base))
+    }
+
+    .unit-1-4\\/5 {
+      --twgl-current-base: calc(1.8 * var(--twgl-base))
+    }
+
+    .unit-1-1\\/4 {
+      --twgl-current-base: calc(1.25 * var(--twgl-base))
+    }
+
+    .unit-1-2\\/4 {
+      --twgl-current-base: calc(1.5 * var(--twgl-base))
+    }
+
+    .unit-1-3\\/4 {
+      --twgl-current-base: calc(1.75 * var(--twgl-base))
+    }
+
+    .unit-1-1\\/3 {
+      --twgl-current-base: calc(1.333 * var(--twgl-base))
+    }
+
+    .unit-1-2\\/3 {
+      --twgl-current-base: calc(1.667 * var(--twgl-base))
+    }
+
+    .unit-1-1\\/2 {
+      --twgl-current-base: calc(1.5 * var(--twgl-base))
+    }
+
+    .unit-2-1\\/4 {
+      --twgl-current-base: calc(2.25 * var(--twgl-base))
+    }
+
+    .unit-2-2\\/4 {
+      --twgl-current-base: calc(2.5 * var(--twgl-base))
+    }
+
+    .unit-2-3\\/4 {
+      --twgl-current-base: calc(2.75 * var(--twgl-base))
+    }
+
+    .unit-2-1\\/3 {
+      --twgl-current-base: calc(2.333 * var(--twgl-base))
+    }
+
+    .unit-2-2\\/3 {
+      --twgl-current-base: calc(2.667 * var(--twgl-base))
+    }
+
+    .unit-2-1\\/2 {
+      --twgl-current-base: calc(2.5 * var(--twgl-base))
+    }`
+
+		return generateUtilityCSS({
+				theme: {
+						gridlines: false
+				}
+		}).then(result => {
+				expect(result).toMatchCss(output)
+		})
+	})
+})
+
 describe('Gridlines utilities', () => {
     it('should generate utility classes with default colors', () => {
         const output = `
