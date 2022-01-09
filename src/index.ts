@@ -107,6 +107,11 @@ module.exports = plugin(function(api:any) {
       '0': '0',
       ...UNIT_FRACTIONS
 		},
+    strokeWidth: {
+        DEFAULT: '1px',
+        '0': '0',
+        ...UNIT_FRACTIONS
+    },
     inset: (theme, { negative }) => ({
       auto: 'auto',
       ...theme('spacing'),
