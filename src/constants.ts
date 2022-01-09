@@ -1,6 +1,8 @@
 import { generateFractionUtil } from './utils'
 
 export const DEFAULT_BASE = '24px'
+export const DEFAULT_RULE_COLOR = 'rgba(255,255,255, 0.2)'
+export const DEFAULT_RULE_SECONDARY_COLOR = 'rgba(255,255,255, 0.1)'
 export const SVG_CELL_SIZE = 100
 
 export const UNIT_FRACTIONS = {

@@ -2,7 +2,7 @@ import plugin from 'tailwindcss/plugin'
 import preflight from './plugins/preflight'
 import gridlines from './plugins/gridlines'
 import unit from './plugins/unit'
-import { DEFAULT_BASE, FRACTIONS_1_TO_2, FRACTIONS_1_TO_5, PERCENTAGES, PERCENTAGES_FRACTIONS, UNIT_FRACTIONS } from './constants'
+import { DEFAULT_BASE, FRACTIONS_1_TO_2, FRACTIONS_1_TO_5, PERCENTAGES, PERCENTAGES_FRACTIONS, UNIT_FRACTIONS, DEFAULT_RULE_COLOR, DEFAULT_RULE_SECONDARY_COLOR } from './constants';
 import { generateFractionUtil, generateUnitMultipleString, generateUnitConfig } from './utils';
 
 
@@ -233,8 +233,8 @@ module.exports = plugin(function(api:any) {
       screen: '100vh',
     }),
     gridlines: {
-      ruleColor: 'rgba(255,255,255, 0.2)',
-      ruleSecondaryColor: 'rgba(255,255,255, 0.1)'
+      ruleColor: DEFAULT_RULE_COLOR,
+      ruleSecondaryColor: DEFAULT_RULE_SECONDARY_COLOR
     },
     ringOffsetWidth: {
       '0': '0',
