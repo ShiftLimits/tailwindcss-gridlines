@@ -178,6 +178,34 @@ describe('Unit utilities', () => {
       --twgl-current-base: calc(0.5 * var(--twgl-base))
     }
 
+    .unit-1-1\\/8 {
+      --twgl-current-base: calc(1.125 * var(--twgl-base))
+    }
+
+    .unit-1-2\\/8 {
+      --twgl-current-base: calc(1.25 * var(--twgl-base))
+    }
+
+    .unit-1-3\\/8 {
+      --twgl-current-base: calc(1.375 * var(--twgl-base))
+    }
+
+    .unit-1-4\\/8 {
+      --twgl-current-base: calc(1.5 * var(--twgl-base))
+    }
+
+    .unit-1-5\\/8 {
+      --twgl-current-base: calc(1.625 * var(--twgl-base))
+    }
+
+    .unit-1-6\\/8 {
+      --twgl-current-base: calc(1.75 * var(--twgl-base))
+    }
+
+    .unit-1-7\\/8 {
+      --twgl-current-base: calc(1.875 * var(--twgl-base))
+    }
+
     .unit-1-1\\/5 {
       --twgl-current-base: calc(1.2 * var(--twgl-base))
     }
