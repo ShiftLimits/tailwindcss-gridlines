@@ -252,6 +252,11 @@ module.exports = plugin(function(api:any) {
       'px': '1px',
       ...UNIT_FRACTIONS
     },
+    outlineWidth: {
+      '0': '0',
+      'px': '1px',
+      ...UNIT_FRACTIONS
+    },
     textIndent: (theme, { negative }) => ({
       ...theme('lineHeight'),
       ...negative(theme('lineHeight'))
