@@ -8,7 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Add `unit` utility for adjusting the base grid cell size on a per-element basis
 
-### Fixed
+### Changed
+- Add Stroke Width
+- Add outline and outline offset
+- Fixed bottom positioning on gridlines utilities
 - Gridlines utilities will no longer generate if `theme.gridlines` is `false`
 
 ## [0.2.2] - 2021-10-10
