@@ -278,7 +278,7 @@ describe('Gridlines utilities', () => {
 					}
 			
 					.gridlines-bottom-left::after {
-							background-position: top left
+							background-position: bottom left
 					}
 			
 					.gridlines-top-right::after {
@@ -290,7 +290,7 @@ describe('Gridlines utilities', () => {
 					}
 			
 					.gridlines-bottom-right::after {
-							background-position: top right
+							background-position: bottom right
 					}
 			
 					.gridlines-center::after {
