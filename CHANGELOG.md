@@ -14,6 +14,7 @@ Nothing yet.
 - Add `unit` utility for adjusting the base grid cell size on a per-element basis
 
 ### Changed
+- Increase `line-height` scale values to 5 units (from 2)
 - Add Stroke Width
 - Add outline and outline offset
 - Fixed bottom positioning on gridlines utilities
