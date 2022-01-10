@@ -35,6 +35,10 @@ module.exports = {
 }
 ```
 
+## Documentation
+
+Please see the [documentation Wiki](https://github.com/ShiftLimits/tailwindcss-gridlines/wiki) for a full description of what is new and what has changed.
+
 ## New Utilities
 
 ### Base Grid Cell Size
@@ -46,43 +50,9 @@ The core unit of gridlines is your base grid cell size. You can think of this as
 | base | 24px |
 
 #### Controlling Per-Element
+- *See [unit documentation](https://github.com/ShiftLimits/tailwindcss-gridlines/wiki/Unit)*
 
-The new `unit` utility can be used to adjust the relative sizing for an individual element and its children. This can be useful for creating different size variants of a component.
-
-| Name       | Size  | Pixels   |
-| ---------- | ----- | -------- |
-| unit-1/8   | 0.125 | 3px      |
-| unit-2/8   | 0.25  | 6px      |
-| unit-3/8   | 0.375 | 9px      |
-| unit-4/8   | 0.5   | 12px     |
-| unit-5/8   | 0.625 | 15px     |
-| unit-6/8   | 0.75  | 18px     |
-| unit-7/8   | 0.875 | 21px     |
-| unit-1/5   | 0.2   | 4.8px    |
-| unit-2/5   | 0.4   | 9.6px    |
-| unit-3/5   | 0.5   | 14.4px   |
-| unit-4/5   | 0.8   | 19.12px  |
-| unit-1/4   | 0.25  | 6px      |
-| unit-2/4   | 0.5   | 12px     |
-| unit-3/4   | 0.75  | 18px     |
-| unit-1/3   | 0.333 | 7.992px  |
-| unit-2/3   | 0.666 | 16.008px |
-| unit-1/2   | 0.5   | 12px     |
-| unit-1     | 1     | 24px     |
-| unit-1-1/5 | 1.2   | 28.8px   |
-| unit-1-2/5 | 1.4   | 33.6px   |
-| unit-1-3/5 | 1.5   | 38.4px   |
-| unit-1-4/5 | 1.8   | 43.12px  |
-| unit-1-1/4 | 1.25  | 30px     |
-| unit-1-2/4 | 1.5   | 36px     |
-| unit-1-3/4 | 1.75  | 42px     |
-| unit-1-1/2 | 1.5   | 36px     |
-| unit-2     | 2     | 48px     |
-| unit-2-1/4 | 2.25  | 54px     |
-| unit-2-2/4 | 2.5   | 60px     |
-| unit-2-3/4 | 2.75  | 66px     |
-| unit-2-1/2 | 2.5   | 60px     |
-| unit-3     | 3     | 72px     |
+The new `unit` utility can be used to adjust the relative sizing for an individual element and its children.
 
 #### Customizing
 
@@ -116,65 +86,18 @@ module.exports = {
 ```
 
 ### Gridlines
+- *See [gridlines documentation](https://github.com/ShiftLimits/tailwindcss-gridlines/wiki/Gridlines)*
 
-These utilities overlay a grid to help visually aid the design process. They can be placed on the `body` element to overlay across the whole page, or on individual elements for lining up the element's content specifically.
+Overlay a grid to help visually aid the design process.
 
-The grid will be sized according to your base grid cell size. Each subdivision utility is based on a common denominator of the [spacing fractions](#spacing) that are less than 1.
+## Spacing Scale
+- *See [spacing documentation](https://github.com/ShiftLimits/tailwindcss-gridlines/wiki/Spacing)*
 
-| Class              | Preview                                                           |
-| ------------------ | ----------------------------------------------------------------- |
-| gridlines-dots     | <img src="docs/images/gridlines-dots-preview.png" width="520">    |
-| gridlines-unit     | <img src="docs/images/gridlines-unit-preview.png" width="520">    |
-| gridlines-thirds   | <img src="docs/images/gridlines-thirds-preview.png" width="520">  |
-| gridlines-quads    | <img src="docs/images/gridlines-quads-preview.png" width="520">   |
-| gridlines-fifths   | <img src="docs/images/gridlines-fifths-preview.png" width="520">  |
-| gridlines-octs     | <img src="docs/images/gridlines-octs-preview.png" width="520">    |
+Gridlines is a complete overhaul of the spacing scale in Tailwind CSS.
 
-#### Positioning
+With vanilla Tailwind, the spacing scale uses decimals and is equivalent to a grid with a base unit size of `4px`. With Gridlines, the spacing scale uses fractions and you define the base unit size that the spacing scale is a fraction of. By default, Gridlines uses a base unit size of `24px`.
 
-By default the grid's origin is positioned at the top left of the element it is applied on. These utilities help you position the gridlines if you are working with elements that have a different origin, such as a panel that is anchored to the right edge of the screen.
-
-| Class                  | Value Applied To Gridlines           |
-| ---------------------- | ------------------------------------ |
-| gridlines-top-left     | `background-position: top left;`     |
-| gridlines-left         | `background-position: left;`         |
-| gridlines-bottom-left  | `background-position: bottom left;`  |
-| gridlines-center       | `background-position: center;`       |
-| gridlines-top-right    | `background-position: top right;`    |
-| gridlines-right        | `background-position: right;`        |
-| gridlines-bottom-right | `background-position: bottom right;` |
-
-#### Customizing
-
-The grid uses `mix-blend-mode: difference;` to make sure the rules are visible at different contrasts. You can customize the rule colors by editing the `theme.gridlines` value of your Tailwind config like so:
-
-```js
-// tailwind.config.js
-
-module.exports = {
-  theme: {
-    gridlines: {
-      ruleColor: 'rgba(255,0,0, 0.5)', // Half-opaque red unit rules
-      ruleSecondaryColor: 'rgba(255,0,0, 0.1)' // Almost-transparent red subdivision rules
-    }
-  },
-  // ...
-}
-```
-
-#### Note
-
-This utility uses the `::after` pseudo-element to overlay the grid and is therefore incompatible with any utility or CSS that also uses the pseudo-element.
-
-## Changed Utilities
-
-### Spacing
-
-Gridlines is a complete overhaul of the spacing system in Tailwind CSS. All plugins that inherit from the spacing scale will be affected, which includes `padding`, `margin`, `width`, `height`, `maxHeight`, `gap`, `inset`, `space`, and `translate` core plugins at the time of writing.
-
-#### Relative To Base Grid Cell Size
-
-We generate a proportional spacing scale as fractions of the base grid cell size. If you are using Tailwind v2 it is recommended that you enable JIT mode to remove unused utilities.
+Example of the fraction scale from 0 to 1 with a base unit of `24px`:
 
 | Name   | Size  | Pixels   |
 | ------ | ----- | -------- |
@@ -189,7 +112,7 @@ We generate a proportional spacing scale as fractions of the base grid cell size
 | 7/8    | 0.875 | 21px     |
 | 1/5    | 0.2   | 4.8px    |
 | 2/5    | 0.4   | 9.6px    |
-| 3/5    | 0.5   | 14.4px   |
+| 3/5    | 0.6   | 14.4px   |
 | 4/5    | 0.8   | 19.12px  |
 | 1/4    | 0.25  | 6px      |
 | 2/4    | 0.5   | 12px     |
@@ -198,357 +121,6 @@ We generate a proportional spacing scale as fractions of the base grid cell size
 | 2/3    | 0.666 | 16.008px |
 | 1/2    | 0.5   | 12px     |
 | 1      | 1     | 24px     |
-| 1-1/4  | 1.25  | 30px     |
-| 1-2/4  | 1.5   | 36px     |
-| 1-3/4  | 1.75  | 42px     |
-| 1-1/2  | 1.5   | 36px     |
-| 2      | 2     | 48px     |
-| 2-1/4  | 2.25  | 54px     |
-| 2-2/4  | 2.5   | 60px     |
-| 2-3/4  | 2.75  | 66px     |
-| 2-1/2  | 2.5   | 60px     |
-| 3      | 3     | 72px     |
-| 3-1/4  | 3.25  | 78px     |
-| 3-2/4  | 3.5   | 84px     |
-| 3-3/4  | 3.75  | 90px     |
-| 3-1/2  | 3.5   | 84px     |
-| 4      | 4     | 96px     |
-| 4-1/4  | 4.25  | 102px    |
-| 4-2/4  | 4.5   | 108px    |
-| 4-3/4  | 4.75  | 114px    |
-| 4-1/2  | 4.5   | 108px    |
-| 5      | 5     | 120px    |
-| 5-1/4  | 5.25  | 126px    |
-| 5-2/4  | 5.5   | 132px    |
-| 5-3/4  | 5.75  | 138px    |
-| 5-1/2  | 5.5   | 132px    |
-| 6      | 6     | 144px    |
-| 6-1/4  | 6.25  | 150px    |
-| 6-2/4  | 6.5   | 156px    |
-| 6-3/4  | 6.75  | 162px    |
-| 6-1/2  | 6.5   | 156px    |
-| 7      | 7     | 168px    |
-| 7-1/4  | 7.25  | 174px    |
-| 7-2/4  | 7.5   | 180px    |
-| 7-3/4  | 7.75  | 186px    |
-| 7-1/2  | 7.5   | 180px    |
-| 8      | 8     | 192px    |
-| 8-1/4  | 8.25  | 198px    |
-| 8-2/4  | 8.5   | 204px    |
-| 8-3/4  | 8.75  | 210px    |
-| 8-1/2  | 8.5   | 204px    |
-| 9      | 9     | 216px    |
-| 9-1/4  | 9.25  | 222px    |
-| 9-2/4  | 9.5   | 228px    |
-| 9-3/4  | 9.75  | 234px    |
-| 9-1/2  | 9.5   | 228px    |
-| 10     | 10    | 240px    |
-| 11     | 11    | 264px    |
-| 12     | 12    | 288px    |
-| 13     | 13    | 312px    |
-| 14     | 14    | 336px    |
-| 15     | 15    | 360px    |
-| 16     | 16    | 384px    |
-| 17     | 17    | 408px    |
-| 18     | 18    | 432px    |
-| 19     | 19    | 456px    |
-| 20     | 20    | 480px    |
-| 25     | 25    | 600px    |
-| 30     | 30    | 720px    |
-| 35     | 35    | 840px    |
-| 40     | 40    | 960px    |
-
-#### Percentages
-
-Percentage utilities have been renamed in two flavors depending on your preference: fractional and decimal.
-
-##### Fractional
-
-| Name       | Size       |
-| ---------- | ---------- |
-| 1/2%       | 50%        |
-| 1/3%       | 33.333333% |
-| 2/3%       | 66.666667% |
-| 1/4%       | 25%        |
-| 2/4%       | 50%        |
-| 3/4%       | 75%        |
-| 1/5%       | 20%        |
-| 2/5%       | 40%        |
-| 3/5%       | 60%        |
-| 4/5%       | 80%        |
-| 1/6%       | 16.666667% |
-| 2/6%       | 33.333333% |
-| 3/6%       | 50%        |
-| 4/6%       | 66.666667% |
-| 5/6%       | 83.333333% |
-| 1/12%      | 8.333333%  |
-| 2/12%      | 16.666667% |
-| 3/12%      | 25%        |
-| 4/12%      | 33.333333% |
-| 5/12%      | 41.666667% |
-| 6/12%      | 50%        |
-| 7/12%      | 58.333333% |
-| 8/12%      | 66.666667% |
-| 9/12%      | 75%        |
-| 10/12%     | 83.333333% |
-| 11/12%     | 91.666667% |
-| full       | 100%       |
-
-##### Decimal
-
-| Name   | Size       |
-| ------ | ---------- |
-| 8.33%  | 8.33%      |
-| 10%    | 10%        |
-| 16.66% | 16.666667% |
-| 20%    | 20%        |
-| 25%    | 25%        |
-| 30%    | 30%        |
-| 33.33% | 33.333333% |
-| 40%    | 40%        |
-| 41.66% | 41.666667% |
-| 50%    | 50%        |
-| 58.33% | 58.333333% |
-| 60%    | 60%        |
-| 66.66% | 66.666667% |
-| 70%    | 70%        |
-| 75%    | 75%        |
-| 80%    | 80%        |
-| 83.33% | 83.333333% |
-| 90%    | 90%        |
-| 91.66% | 91.666667% |
-| 100%   | 100%       |
-| full   | 100%       |
-
-### Width / Max-Width / Min-Width
-
-In addition to the spacing values above, the `width`, `max-width`, and `min-width` utilities also include each screen breakpoint and the following:
-
-| Name        | Size        |
-| ----------- | ----------- |
-| 1/4-screen  | 25vw        |
-| 1/3-screen  | 33vw        |
-| 1/2-screen  | 50vw        |
-| 2/3-screen  | 66vw        |
-| 3/4-screen  | 75vw        |
-| screen      | 100vw       |
-| fit         | fit-content |
-| min         | min-content |
-| max         | max-content |
-
-#### Width
-
-These utilities are specific to `width`.
-
-| Name | Size |
-| ---- | ---- |
-| auto | auto |
-
-#### Min-Width
-
-These utilities are specific to `min-width`.
-
-| Name | Size        |
-| ---- | ----------- |
-| 0    | 0px         |
-
-#### Max-Width
-
-These utilities are specific to `max-width`.
-
-| Name | Size |
-| ---- | ---- |
-| none | none |
-
-### Height / Max-Height / Min-Height
-
-In addition to the spacing values above, the `height`, `max-height`, and `min-height` utilities also include each screen breakpoint and the following:
-
-| Name       | Size        |
-| ---------- | ----------- |
-| 1/4-screen | 25vh        |
-| 1/3-screen | 33vh        |
-| 1/2-screen | 50vh        |
-| 2/3-screen | 66vh        |
-| 3/4-screen | 75vh        |
-| screen     | 100vh       |
-| fit        | fit-content |
-| min        | min-content |
-| max        | max-content |
-
-#### Height
-
-These utilities are specific to `height`.
-
-| Name | Size |
-| ---- | ---- |
-| auto | auto |
-
-#### Min-Height
-
-These utilities are specific to `min-height`.
-
-| Name | Size |
-| ---- | ---- |
-| 0    | 0px  |
-
-
-#### Max-Height
-
-These utilities are specific to `max-height`.
-
-| Name | Size |
-| ---- | ---- |
-| none | none |
-
-### Inset
-
-In addition to the spacing values above, the `inset` utility also includes negative spacing values.
-
-### Translate
-
-In addition to the spacing values above, the `translate` utility also includes negative spacing values.
-
-### Border Radius
-
-Instead being named, Gridlines expresses border radii as a fraction of the base grid cell size.
-
-| Name   | Size     | Pixels   |
-| ------ | -------- | -------- |
-| none   | 0        | 0px      |
-| 1/8    | 0.125    | 3px      |
-| 2/8    | 0.25     | 6px      |
-| 3/8    | 0.375    | 9px      |
-| 4/8    | 0.5      | 12px     |
-| 5/8    | 0.625    | 15px     |
-| 6/8    | 0.75     | 18px     |
-| 7/8    | 0.875    | 21px     |
-| 1/5    | 0.2      | 4.8px    |
-| 2/5    | 0.4      | 9.6px    |
-| 3/5    | 0.5      | 14.4px   |
-| 4/5    | 0.8      | 19.12px  |
-| 1/4    | 0.25     | 6px      |
-| 2/4    | 0.5      | 12px     |
-| 3/4    | 0.75     | 18px     |
-| 1/3    | 0.333    | 7.992px  |
-| 2/3    | 0.666    | 16.008px |
-| 1/2    | 0.5      | 12px     |
-| 1      | 1        | 24px     |
-| 1-1/4  | 1.25     | 30px     |
-| 1-2/4  | 1.5      | 36px     |
-| 1-3/4  | 1.75     | 42px     |
-| 1-1/2  | 1.5      | 36px     |
-| 2      | 2        | 48px     |
-| full   | 9999px   | 9999px   |
-
-### Border Width
-
-| Name    | Size     | Pixels   |
-| ------- | -------- | -------- |
-| default | 1px      | 1px      |
-| 0       | 0        | 0px      |
-| 1/8     | 0.125    | 3px      |
-| 2/8     | 0.25     | 6px      |
-| 3/8     | 0.375    | 9px      |
-| 4/8     | 0.5      | 12px     |
-| 5/8     | 0.625    | 15px     |
-| 6/8     | 0.75     | 18px     |
-| 7/8     | 0.875    | 21px     |
-| 1/5     | 0.2      | 4.8px    |
-| 2/5     | 0.4      | 9.6px    |
-| 3/5     | 0.5      | 14.4px   |
-| 4/5     | 0.8      | 19.12px  |
-| 1/4     | 0.25     | 6px      |
-| 2/4     | 0.5      | 12px     |
-| 3/4     | 0.75     | 18px     |
-| 1/3     | 0.333    | 7.992px  |
-| 2/3     | 0.666    | 16.008px |
-| 1/2     | 0.5      | 12px     |
-| 1       | 1        | 24px     |
-
-### Ring Offset
-
-| Name    | Size     | Pixels   |
-| ------- | -------- | -------- |
-| 0       | 0        | 0px      |
-| px      | 1px      | 1px      |
-| 1/8     | 0.125    | 3px      |
-| 2/8     | 0.25     | 6px      |
-| 3/8     | 0.375    | 9px      |
-| 4/8     | 0.5      | 12px     |
-| 5/8     | 0.625    | 15px     |
-| 6/8     | 0.75     | 18px     |
-| 7/8     | 0.875    | 21px     |
-| 1/5     | 0.2      | 4.8px    |
-| 2/5     | 0.4      | 9.6px    |
-| 3/5     | 0.5      | 14.4px   |
-| 4/5     | 0.8      | 19.12px  |
-| 1/4     | 0.25     | 6px      |
-| 2/4     | 0.5      | 12px     |
-| 3/4     | 0.75     | 18px     |
-| 1/3     | 0.333    | 7.992px  |
-| 2/3     | 0.666    | 16.008px |
-| 1/2     | 0.5      | 12px     |
-| 1       | 1        | 24px     |
-
-### Ring Width
-
-| Name    | Size     | Pixels   |
-| ------- | -------- | -------- |
-| 0       | 0        | 0px      |
-| px      | 1px      | 1px      |
-| 1/8     | 0.125    | 3px      |
-| 2/8     | 0.25     | 6px      |
-| 3/8     | 0.375    | 9px      |
-| 4/8     | 0.5      | 12px     |
-| 5/8     | 0.625    | 15px     |
-| 6/8     | 0.75     | 18px     |
-| 7/8     | 0.875    | 21px     |
-| 1/5     | 0.2      | 4.8px    |
-| 2/5     | 0.4      | 9.6px    |
-| 3/5     | 0.5      | 14.4px   |
-| 4/5     | 0.8      | 19.12px  |
-| 1/4     | 0.25     | 6px      |
-| 2/4     | 0.5      | 12px     |
-| 3/4     | 0.75     | 18px     |
-| 1/3     | 0.333    | 7.992px  |
-| 2/3     | 0.666    | 16.008px |
-| 1/2     | 0.5      | 12px     |
-| 1       | 1        | 24px     |
-
-### Line Height / Leading
-
-Gridlines leaves the named relative line height utilities from Tailwind alone but replaces the absolute utilities with the fraction system. This change is useful for accurately aligning text within the grid cells.
-
-| Name   | Size     | Pixels   |
-| ------ | -------- | -------- |
-| 1/8    | 0.125    | 3px      |
-| 2/8    | 0.25     | 6px      |
-| 3/8    | 0.375    | 9px      |
-| 4/8    | 0.5      | 12px     |
-| 5/8    | 0.625    | 15px     |
-| 6/8    | 0.75     | 18px     |
-| 7/8    | 0.875    | 21px     |
-| 1/5    | 0.2      | 4.8px    |
-| 2/5    | 0.4      | 9.6px    |
-| 3/5    | 0.5      | 14.4px   |
-| 4/5    | 0.8      | 19.12px  |
-| 1/4    | 0.25     | 6px      |
-| 2/4    | 0.5      | 12px     |
-| 3/4    | 0.75     | 18px     |
-| 1/3    | 0.333    | 7.992px  |
-| 2/3    | 0.666    | 16.008px |
-| 1/2    | 0.5      | 12px     |
-| 1      | 1        | 24px     |
-| 1-1/4  | 1.25     | 30px     |
-| 1-2/4  | 1.5      | 36px     |
-| 1-3/4  | 1.75     | 42px     |
-| 1-1/2  | 1.5      | 36px     |
-| 2      | 2        | 48px     |
-
-### Text Indent
-
-Since indenting is based on line-height values in Tailwind, these have the same values as above as well as the negations of each.
 
 ## Contributing
 
