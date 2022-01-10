@@ -138,7 +138,7 @@ module.exports = plugin(function(api:any) {
       relaxed: '1.625',
       loose: '2',
       ...UNIT_FRACTIONS,
-      ...FRACTIONS_1_TO_2,
+      ...FRACTIONS_1_TO_5,
     },
     maxWidth: (theme, { breakpoints }) => ({
       none: 'none',
