@@ -6,7 +6,7 @@ An experimental default experience for Tailwind CSS that uses gridlines and frac
 
 ## What is this?
 
-Gridlines for Tailwind CSS is a reimagining of Tailwind's spacing system inspired by grid paper. It is a drop-in plugin that adds a preset which moves all spacing-related utilities over to to the [new system](https://github.com/ShiftLimits/tailwindcss-gridlines/wiki/Spacing). It also includes the (unit utility)[https://github.com/ShiftLimits/tailwindcss-gridlines/wiki/Unit] to scale the spacing values per-element and some (overlay utilities)[https://github.com/ShiftLimits/tailwindcss-gridlines/wiki/Gridlines] to help visualize the new spacing values.
+Gridlines for Tailwind CSS is a reimagining of Tailwind's spacing system inspired by grid paper. It is a drop-in plugin that adds a preset which moves all spacing-related utilities over to to the [new system](https://github.com/ShiftLimits/tailwindcss-gridlines/wiki/Spacing). It also includes the [unit utility](https://github.com/ShiftLimits/tailwindcss-gridlines/wiki/Unit) to scale the spacing values per-element and some [overlay utilities](https://github.com/ShiftLimits/tailwindcss-gridlines/wiki/Gridlines) to help visualize the new spacing values.
 
 The core idea is to switch from reasoning about layout in absolute pixels to reasoning in ratios and fractions relative to your base grid cell size. This allows for creating responsive designs that can be scaled by changing one value - `theme.base` - which is useful for adapting to device contexts where the user can be very close to the screen, such as tablets and mobile phones, or very far from the screen, such as so-called '10-foot' UI for TV and advertising panels.
 
