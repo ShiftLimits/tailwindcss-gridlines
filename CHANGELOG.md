@@ -6,7 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-Nothing yet.
+### Added
+- Added new range generator function to automatically generate a range of fraction utilities, accessible with `gridlines.generateRange` (see tests)
+- Extended spacing scale to 60 and added half and quarter fractions for the whole scale
 
 ## [0.2.3] - 2022-01-09
 
