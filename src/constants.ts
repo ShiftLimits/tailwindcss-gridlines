@@ -1,58 +1,17 @@
-import { generateFractionUtil } from './utils'
+import { generateFractionUtil, generateRange } from './utils'
 
 export const DEFAULT_BASE = '24px'
 export const DEFAULT_RULE_COLOR = 'rgba(255,255,255, 0.2)'
 export const DEFAULT_RULE_SECONDARY_COLOR = 'rgba(255,255,255, 0.1)'
 export const SVG_CELL_SIZE = 100
 
-export const UNIT_FRACTIONS = {
-  ...generateFractionUtil('1/8'),
-  ...generateFractionUtil('2/8'),
-  ...generateFractionUtil('3/8'),
-  ...generateFractionUtil('4/8'),
-  ...generateFractionUtil('5/8'),
-  ...generateFractionUtil('6/8'),
-  ...generateFractionUtil('7/8'),
-  ...generateFractionUtil('1/5'),
-  ...generateFractionUtil('2/5'),
-  ...generateFractionUtil('3/5'),
-  ...generateFractionUtil('4/5'),
-  ...generateFractionUtil('1/4'),
-  ...generateFractionUtil('2/4'),
-  ...generateFractionUtil('3/4'),
-  ...generateFractionUtil('1/3'),
-  ...generateFractionUtil('2/3'),
-  ...generateFractionUtil('1/2'),
-  ...generateFractionUtil('1'),
-}
+export const UNIT_FRACTIONS = generateRange(0, 1, { denominators: [2,3,4,5,8] })
 
-export const FRACTIONS_1_TO_2 = {
-  ...generateFractionUtil('1 1/4'),
-  ...generateFractionUtil('1 2/4'),
-  ...generateFractionUtil('1 3/4'),
-  ...generateFractionUtil('1 1/3'),
-  ...generateFractionUtil('1 2/3'),
-  ...generateFractionUtil('1 1/2'),
-  ...generateFractionUtil('2'),
-}
+export const FRACTIONS_1_TO_2 = generateRange(1, 2, { denominators: [2,3,4], inclusive: false })
 
 export const FRACTIONS_1_TO_5 = {
   ...FRACTIONS_1_TO_2,
-  ...generateFractionUtil('2 1/4'),
-  ...generateFractionUtil('2 2/4'),
-  ...generateFractionUtil('2 3/4'),
-  ...generateFractionUtil('2 1/2'),
-  ...generateFractionUtil('3'),
-  ...generateFractionUtil('3 1/4'),
-  ...generateFractionUtil('3 2/4'),
-  ...generateFractionUtil('3 3/4'),
-  ...generateFractionUtil('3 1/2'),
-  ...generateFractionUtil('4'),
-  ...generateFractionUtil('4 1/4'),
-  ...generateFractionUtil('4 2/4'),
-  ...generateFractionUtil('4 3/4'),
-  ...generateFractionUtil('4 1/2'),
-  ...generateFractionUtil('5'),
+  ...generateRange(2, 5, { denominators: [2,4], inclusive: false })
 }
 
 export const PERCENTAGES = {
