@@ -124,6 +124,151 @@ describe('Preflight', () => {
     })
 })
 
+describe('Spacing scale', () => {
+	it('should generate widths from 0 to 1, with denominators of 2, 3 and 4', () => {
+		const output = `
+			.w-1 {
+				width: calc(1 * var(--twgl-current-base))
+			}
+
+			.w-1\\/2 {
+				width: calc(0.5 * var(--twgl-current-base))
+			}
+
+			.w-1\\/3 {
+				width: calc(0.333 * var(--twgl-current-base))
+			}
+
+			.w-2\\/3 {
+				width: calc(0.667 * var(--twgl-current-base))
+			}
+
+			.w-1\\/4 {
+				width: calc(0.25 * var(--twgl-current-base))
+			}
+
+			.w-2\\/4 {
+				width: calc(0.5 * var(--twgl-current-base))
+			}
+
+			.w-3\\/4 {
+				width: calc(0.75 * var(--twgl-current-base))
+			}
+		`
+
+		return generateUtilityCSS({
+				theme: {
+					unit: false,
+					gridlines: false,
+					width: gridlines.generateRange(0, 1, { denominators: [2,3,4] })
+				},
+				variants: {
+					width: []
+				},
+				corePlugins: ['width']
+		}).then(result => {
+				expect(result).toMatchCss(output)
+		})
+	})
+	it('should generate widths from 1 to 5, not including 1, with denominators of 2 and 4', () => {
+		const output = `
+			.w-2 {
+				width: calc(2 * var(--twgl-current-base))
+			}
+
+			.w-3 {
+				width: calc(3 * var(--twgl-current-base))
+			}
+
+			.w-4 {
+				width: calc(4 * var(--twgl-current-base))
+			}
+
+			.w-5 {
+				width: calc(5 * var(--twgl-current-base))
+			}
+
+			.w-1-1\\/2 {
+				width: calc(1.5 * var(--twgl-current-base))
+			}
+
+			.w-1-1\\/4 {
+				width: calc(1.25 * var(--twgl-current-base))
+			}
+
+			.w-1-2\\/4 {
+				width: calc(1.5 * var(--twgl-current-base))
+			}
+
+			.w-1-3\\/4 {
+				width: calc(1.75 * var(--twgl-current-base))
+			}
+
+			.w-2-1\\/2 {
+				width: calc(2.5 * var(--twgl-current-base))
+			}
+
+			.w-2-1\\/4 {
+				width: calc(2.25 * var(--twgl-current-base))
+			}
+
+			.w-2-2\\/4 {
+				width: calc(2.5 * var(--twgl-current-base))
+			}
+
+			.w-2-3\\/4 {
+				width: calc(2.75 * var(--twgl-current-base))
+			}
+
+			.w-3-1\\/2 {
+				width: calc(3.5 * var(--twgl-current-base))
+			}
+
+			.w-3-1\\/4 {
+				width: calc(3.25 * var(--twgl-current-base))
+			}
+
+			.w-3-2\\/4 {
+				width: calc(3.5 * var(--twgl-current-base))
+			}
+
+			.w-3-3\\/4 {
+				width: calc(3.75 * var(--twgl-current-base))
+			}
+
+			.w-4-1\\/2 {
+				width: calc(4.5 * var(--twgl-current-base))
+			}
+
+			.w-4-1\\/4 {
+				width: calc(4.25 * var(--twgl-current-base))
+			}
+
+			.w-4-2\\/4 {
+				width: calc(4.5 * var(--twgl-current-base))
+			}
+
+			.w-4-3\\/4 {
+				width: calc(4.75 * var(--twgl-current-base))
+			}
+		`
+
+		return generateUtilityCSS({
+				theme: {
+					unit: false,
+					gridlines: false,
+					width: gridlines.generateRange(1, 5, { denominators: [2,4], inclusive: false })
+				},
+				variants: {
+					width: []
+				},
+				corePlugins: ['width']
+		}).then(result => {
+				expect(result).toMatchCss(output)
+		})
+	})
+})
+
 describe('Unit utilities', () => {
 	it('should generate utility classes', () => {
 		const output = `.unit-1 {
