@@ -3,7 +3,7 @@ import preflight from './plugins/preflight'
 import gridlines from './plugins/gridlines'
 import unit from './plugins/unit'
 import { DEFAULT_BASE, FRACTIONS_1_TO_2, FRACTIONS_1_TO_5, PERCENTAGES, PERCENTAGES_FRACTIONS, UNIT_FRACTIONS, DEFAULT_RULE_COLOR, DEFAULT_RULE_SECONDARY_COLOR } from './constants';
-import { generateFractionUtil, generateUnitMultipleString, generateUnitConfig } from './utils';
+import { generateFractionUtil, generateUnitMultipleString, generateUnitConfig, generateRange } from './utils';
 
 
 module.exports = plugin(function(api:any) {
@@ -283,3 +283,5 @@ module.exports = plugin(function(api:any) {
     textIndent: ['responsive'],
   },
 })
+
+module.exports.generateRange = generateRange
