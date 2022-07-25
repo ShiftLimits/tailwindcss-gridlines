@@ -5,13 +5,13 @@ export const DEFAULT_RULE_COLOR = 'rgba(255,255,255, 0.2)'
 export const DEFAULT_RULE_SECONDARY_COLOR = 'rgba(255,255,255, 0.1)'
 export const SVG_CELL_SIZE = 100
 
-export const UNIT_FRACTIONS = generateRange(0, 1, { denominators: [2,3,4,5,8] })
+export const UNIT_FRACTIONS = generateRange(0, 1, { denominators: [2,3,4,5,6,8] })
 
-export const FRACTIONS_1_TO_2 = generateRange(1, 2, { denominators: [2,3,4], inclusive: false })
+export const FRACTIONS_1_TO_2 = generateRange(1, 2, { denominators: [2,3,4,5,6], inclusive: false })
 
 export const FRACTIONS_1_TO_5 = {
   ...FRACTIONS_1_TO_2,
-  ...generateRange(2, 5, { denominators: [2,4], inclusive: false })
+  ...generateRange(2, 5, { denominators: [2,3,4,5,6], inclusive: false })
 }
 
 export const PERCENTAGES = {
@@ -35,7 +35,7 @@ export const PERCENTAGES = {
   '90%': '90%',
   '91.66%': '91.666667%',
   '100%': '100%',
-} 
+}
 
 export const PERCENTAGES_FRACTIONS = {
   '1/2%': '50%',

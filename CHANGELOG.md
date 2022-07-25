@@ -6,7 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-Nothing yet.
+### Added
+- Added 6th denominations for spacing values between 0 and 5
+- Added 5th denominations for spacing values between 1 and 5 (already present below 1)
+- Added 3rd denominations for spacing values between 2 and 5 (already present below 2)
 
 ## [0.2.4] - 2022-02-11
 

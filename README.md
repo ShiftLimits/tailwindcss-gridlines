@@ -110,6 +110,11 @@ Example of the fraction scale from 0 to 1 with a base unit of `24px`:
 | 5/8    | 0.625 | 15px     |
 | 6/8    | 0.75  | 18px     |
 | 7/8    | 0.875 | 21px     |
+| 1/6    | 0.166 | 4px      |
+| 2/6    | 0.333 | 7.992px  |
+| 3/6    | 0.5   | 12px     |
+| 4/6    | 0.666 | 16.008px |
+| 5/6    | 0.833 | 20px     |
 | 1/5    | 0.2   | 4.8px    |
 | 2/5    | 0.4   | 9.6px    |
 | 3/5    | 0.6   | 14.4px   |
@@ -126,7 +131,7 @@ Example of the fraction scale from 0 to 1 with a base unit of `24px`:
 
 Feedback is welcome, please use GitHub issues appropriately. This idea has been rattling around in my head since 2018 so fresh perspectives may lead to greater insight.
 
-If suggesting any major changes please make sure it is well reasoned and in line with the core principles of this project. Understand I am one busy person and require a description of the problem and a compelling argument for the proposed solution in order to consider it properly. 
+If suggesting any major changes please make sure it is well reasoned and in line with the core principles of this project. Understand I am one busy person and require a description of the problem and a compelling argument for the proposed solution in order to consider it properly.
 
 ## License
 
