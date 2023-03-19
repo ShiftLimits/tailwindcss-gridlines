@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- Added support for the container queries provided by `@tailwindcss/container-queries`
 - Added 6th denominations for spacing values between 0 and 5
 - Added 5th denominations for spacing values between 1 and 5 (already present below 1)
 - Added 3rd denominations for spacing values between 2 and 5 (already present below 2)

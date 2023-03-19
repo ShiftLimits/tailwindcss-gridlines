@@ -232,6 +232,10 @@ module.exports = plugin(function(api:any) {
       ...negative(PERCENTAGES_FRACTIONS),
       '-full': '-100%',
     }),
+    containers: (theme) => ({
+      ...theme('spacing'),
+      ...theme('screens'),
+    })
 	},
   variants: {
     textIndent: ['responsive'],
