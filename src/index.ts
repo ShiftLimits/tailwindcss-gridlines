@@ -232,10 +232,15 @@ module.exports = plugin(function(api:any) {
       ...negative(PERCENTAGES_FRACTIONS),
       '-full': '-100%',
     }),
-    containers: (theme) => ({
-      ...theme('spacing'),
-      ...theme('screens'),
-    })
+    containers: (theme) => {
+      let base = theme('base')
+      if (typeof base == "object") base = base.default
+
+      return {
+        ...generateRange(1, 100, { denominators: [2, 4], inclusive: true, generateString(multiple) { return `${multiple * parseFloat(base)}px` } }),
+        ...theme('screens'),
+      }
+    }
 	},
   variants: {
     textIndent: ['responsive'],
